@@ -19,19 +19,22 @@ public class FormulaHandler : MonoBehaviour {
     bool[] activeFormula; // Keeps track of which formulas are possible
     public bool reactionStarted = false; // If a reaction has started. Used to prevent new chemicals from being added.
     ReactionHandler reactionHandler; 
+    FormulaMenu FormulaMenu;
     void Start() {
                                                 //   Coke + menutos         Elphant toothpaste      Briggs clock
         formulas = new int[possibleFormulas, 6] {{6, 5, -1, -1, -1, -1}, {0, 7, 9, 11, 10, -1}, {1, 8, 2, 3, 4, 0}};
         activeFormula = new bool[possibleFormulas] {true, true, true};
         reactionHandler = FindObjectOfType<ReactionHandler>();
+        FormulaMenu = FindObjectOfType<FormulaMenu>();
     }
     // Adds a knew ingredient to the list.
     public void AddIngredient(int ingredient) {
-        // Prevents the addition of new ingredients.
+        // Prevents the addition of new ingredients if the reaction has already started.
         if (reactionStarted) 
             return;
 
         currentFormula.Add(ingredient);
+        FormulaMenu.UpdateCurrentFormula(ingredient);
         print("Ingredient Added: " + ingredient);
         CheckFormula(ingredient); 
         UpdateFlask(ingredient);   
@@ -44,6 +47,7 @@ public class FormulaHandler : MonoBehaviour {
 
         currentFormula = new List<int>();
         materialMesh.enabled = false;
+        FormulaMenu.ClearCurrentFormula();
     }
     // Checks if a reaction has been completed.
     void CheckFormula(int ingredient) {

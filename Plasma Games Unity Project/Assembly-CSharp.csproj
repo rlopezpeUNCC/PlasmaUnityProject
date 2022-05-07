@@ -41,6 +41,7 @@
      <Compile Include="Assets\Scripts\IngredientsMenu.cs" />
      <Compile Include="Assets\Scripts\MenuController.cs" />
      <Compile Include="Assets\Scripts\FormulaHandler.cs" />
+     <Compile Include="Assets\Scripts\FormulaMenu.cs" />
      <None Include="Assets\Imports\FreeLabAssets\Shaders\SBS_Mana.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
