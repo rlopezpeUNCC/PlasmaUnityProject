@@ -8,7 +8,9 @@ public class IngredientsMenu : MonoBehaviour {
     Animator animator;
     [SerializeField]
     Text title;
-    string[] titles = {"Chemicals", "Food", "Home"};
+    [SerializeField]
+    GameObject mouseItem;
+    string[] titles = {"Chemicals", "Food", "Home", "Formulas"};
     int state = 0;
 
     public void ToggleMenu(int menu) {
@@ -23,5 +25,9 @@ public class IngredientsMenu : MonoBehaviour {
         state = menu;
 
         animator.SetInteger("State", state);
+    }
+
+    public void IngredientSelected(int ingredient) {
+        mouseItem.GetComponent<MouseIngredient>().IngredientSelected(ingredient);
     }
 }

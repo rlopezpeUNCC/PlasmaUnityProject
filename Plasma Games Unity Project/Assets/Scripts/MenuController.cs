@@ -5,9 +5,8 @@ using UnityEngine;
 public class MenuController : MonoBehaviour {
     [SerializeField]
     Animator animator;
-    int state = 1;
+    public int state = 1;
     public void ToggleIngredientMenu() {
-        print("Button pressed");
         if (state == 1) {
             animator.SetInteger("State", 2);
             state = 2;
