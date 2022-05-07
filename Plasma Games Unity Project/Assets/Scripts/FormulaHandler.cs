@@ -1,25 +1,34 @@
+/*
+    Keeps track of the current inputed formula, and triggers reaction events once a 
+    known formula is inputed.
+
+    Also facilitates the ability to add ingredients to the formula.
+*/
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FormulaHandler : MonoBehaviour {
     [SerializeField]
-    MeshRenderer materialMesh;
+    MeshRenderer materialMesh; // The mesh of the flask liquid
     [SerializeField]
-    Material material;
-    List<int> currentFormula = new List<int>();
-    const int possibleFormulas = 3;
-    int[,] formulas;
-    bool[] activeFormula;
-    public bool reactionStarted = false;
-    ReactionHandler reactionHandler;
+    Material material; // The materia of the liquid in the flask
+    List<int> currentFormula = new List<int>(); // The current inputed formula
+    const int possibleFormulas = 3; // The amount of possible reactions
+    int[,] formulas; // An array containing all of the possible formulas. An integer is assigned to each of the ingredients
+    bool[] activeFormula; // Keeps track of which formulas are possible
+    public bool reactionStarted = false; // If a reaction has started. Used to prevent new chemicals from being added.
+    ReactionHandler reactionHandler; 
     void Start() {
+                                                //   Coke + menutos         Elphant toothpaste      Briggs clock
         formulas = new int[possibleFormulas, 6] {{6, 5, -1, -1, -1, -1}, {0, 7, 9, 11, 10, -1}, {1, 8, 2, 3, 4, 0}};
         activeFormula = new bool[possibleFormulas] {true, true, true};
         reactionHandler = FindObjectOfType<ReactionHandler>();
     }
+    // Adds a knew ingredient to the list.
     public void AddIngredient(int ingredient) {
-        if (reactionStarted)
+        // Prevents the addition of new ingredients.
+        if (reactionStarted) 
             return;
 
         currentFormula.Add(ingredient);
@@ -27,45 +36,38 @@ public class FormulaHandler : MonoBehaviour {
         CheckFormula(ingredient); 
         UpdateFlask(ingredient);   
     }
+    // Clears the current formula.
     public void ClearFormula(bool overide) {
+        // Returns if the reaction has already started, can be overriden by some reactions that can be cleared before 100% completion.
         if (!overide && reactionStarted)
             return;
 
         currentFormula = new List<int>();
         materialMesh.enabled = false;
     }
+    // Checks if a reaction has been completed.
     void CheckFormula(int ingredient) {
+        // Itterates through the possible formulas and compares it to the newly added ingredient.
         for (int i = 0; i < possibleFormulas; i++) {
+            // If the new ingredient is not in the current formula, update active formals to reflect this.
             if (activeFormula[i]) {
                 if (!FindInCurrentFormula(ingredient, i)) {
                     activeFormula[i] = false;
                 }
             }
         }
-
+        // Checks if any of the formulas has been completed, and starts the reaction if it has.
         if (activeFormula[0] && currentFormula.Count == 2) {
-            StartReaction(0);
+            StartCoroutine(reactionHandler.CokeReaction());
         } else if (activeFormula[1] && currentFormula.Count == 5) {
-            StartReaction(1);
+            StartCoroutine(reactionHandler.ElephantToothpasteReaction());
         } else if (activeFormula[2] && currentFormula.Count == 6) {
-            StartReaction(2);
+            StartCoroutine(reactionHandler.BriggsReaction());
         }
     } 
-    void StartReaction(int reaction) {
-        reactionStarted = true;
-        switch(reaction) {
-            case 0:
-                StartCoroutine(reactionHandler.CokeReaction());
-                break;
-            case 1:
-                StartCoroutine(reactionHandler.ElephantToothpasteReaction());
-                break;
-            case 2:
-                StartCoroutine(reactionHandler.BriggsReaction());
-                break;
-        }
-    }  
+    // Updates the flask liquid color to reflect the knewly added ingredient.  
     void UpdateFlask(int ingredient) {
+        // If this is the first ingredient added, enable the mesh.
         if (currentFormula.Count == 1) {
             materialMesh.enabled = true;
         }
@@ -117,6 +119,7 @@ public class FormulaHandler : MonoBehaviour {
                 break;
         }
     }
+    // Loops through the given formula (index) and returns if a value was found.
     bool FindInCurrentFormula(int value, int index) {
         for (int i = 0; i < 6; i++) {
             if (formulas[index, i] != -1) {

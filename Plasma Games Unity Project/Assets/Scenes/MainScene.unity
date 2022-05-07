@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 11159066}
   - component: {fileID: 11159065}
   - component: {fileID: 11159064}
+  - component: {fileID: 11159067}
   m_Layer: 5
   m_Name: Potassium iodate
   m_TagString: Untagged
@@ -205,19 +206,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11159065}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &11159065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +245,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11159062}
   m_CullTransparentMesh: 1
+--- !u!114 &11159067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11159062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &28772958
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +484,7 @@ GameObject:
   - component: {fileID: 117825026}
   - component: {fileID: 117825025}
   - component: {fileID: 117825024}
+  - component: {fileID: 117825027}
   m_Layer: 5
   m_Name: Water (distilled)
   m_TagString: Untagged
@@ -536,19 +555,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 117825025}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &117825025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,6 +594,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117825022}
   m_CullTransparentMesh: 1
+--- !u!114 &117825027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117825022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 8
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &153959463
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +635,7 @@ GameObject:
   - component: {fileID: 153959467}
   - component: {fileID: 153959466}
   - component: {fileID: 153959465}
+  - component: {fileID: 153959468}
   m_Layer: 5
   m_Name: Yeast
   m_TagString: Untagged
@@ -669,19 +706,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 153959466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &153959466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +745,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153959463}
   m_CullTransparentMesh: 1
+--- !u!114 &153959468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153959463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 7
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &239652541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,7 +1162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &361919929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1150,6 +1204,7 @@ GameObject:
   - component: {fileID: 438516909}
   - component: {fileID: 438516908}
   - component: {fileID: 438516907}
+  - component: {fileID: 438516910}
   m_Layer: 5
   m_Name: Malonic acid
   m_TagString: Untagged
@@ -1220,19 +1275,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 438516908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &438516908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,6 +1314,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438516905}
   m_CullTransparentMesh: 1
+--- !u!114 &438516910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438516905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &450747935
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,6 +6478,7 @@ GameObject:
   - component: {fileID: 539312898}
   - component: {fileID: 539312897}
   - component: {fileID: 539312896}
+  - component: {fileID: 539312899}
   m_Layer: 5
   m_Name: Mentos
   m_TagString: Untagged
@@ -6476,19 +6549,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 539312897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &539312897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6527,6 +6588,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539312894}
   m_CullTransparentMesh: 1
+--- !u!114 &539312899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539312894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 5
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &612234660
 GameObject:
   m_ObjectHideFlags: 0
@@ -6539,6 +6629,7 @@ GameObject:
   - component: {fileID: 612234664}
   - component: {fileID: 612234663}
   - component: {fileID: 612234662}
+  - component: {fileID: 612234665}
   m_Layer: 5
   m_Name: Food coloring
   m_TagString: Untagged
@@ -6609,19 +6700,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 612234663}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &612234663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6660,6 +6739,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612234660}
   m_CullTransparentMesh: 1
+--- !u!114 &612234665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612234660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 10
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &637743589
 GameObject:
   m_ObjectHideFlags: 0
@@ -7311,6 +7419,7 @@ GameObject:
   - component: {fileID: 758626958}
   - component: {fileID: 758626957}
   - component: {fileID: 758626956}
+  - component: {fileID: 758626959}
   m_Layer: 5
   m_Name: Coke
   m_TagString: Untagged
@@ -7381,19 +7490,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 758626957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &758626957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7432,6 +7529,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758626954}
   m_CullTransparentMesh: 1
+--- !u!114 &758626959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758626954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &778172478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7625,7 +7751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a9fdbb33f5cbe4f86f544e97d454e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 839473952}
+  animatorIngredients: {fileID: 839473952}
   state: 1
 --- !u!95 &839473952
 Animator:
@@ -7658,6 +7784,7 @@ GameObject:
   - component: {fileID: 902597278}
   - component: {fileID: 902597277}
   - component: {fileID: 902597276}
+  - component: {fileID: 902597279}
   m_Layer: 5
   m_Name: Sulfuric acid
   m_TagString: Untagged
@@ -7728,19 +7855,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 902597277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &902597277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7779,6 +7894,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902597274}
   m_CullTransparentMesh: 1
+--- !u!114 &902597279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902597274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &905215202
 GameObject:
   m_ObjectHideFlags: 0
@@ -7876,6 +8020,7 @@ GameObject:
   - component: {fileID: 936901873}
   - component: {fileID: 936901872}
   - component: {fileID: 936901871}
+  - component: {fileID: 936901874}
   m_Layer: 5
   m_Name: Manganese sulfate monohydrate
   m_TagString: Untagged
@@ -7946,19 +8091,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 936901872}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &936901872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7997,6 +8130,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936901869}
   m_CullTransparentMesh: 1
+--- !u!114 &936901874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936901869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 4
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &944606962
 GameObject:
   m_ObjectHideFlags: 0
@@ -8009,6 +8171,7 @@ GameObject:
   - component: {fileID: 944606966}
   - component: {fileID: 944606965}
   - component: {fileID: 944606964}
+  - component: {fileID: 944606967}
   m_Layer: 5
   m_Name: Water (warm)
   m_TagString: Untagged
@@ -8079,19 +8242,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 944606965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 9
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &944606965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8130,6 +8281,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944606962}
   m_CullTransparentMesh: 1
+--- !u!114 &944606967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944606962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 9
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &955252958
 GameObject:
   m_ObjectHideFlags: 0
@@ -8145,7 +8325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &955252959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8254,6 +8434,7 @@ GameObject:
   - component: {fileID: 972671919}
   - component: {fileID: 972671918}
   - component: {fileID: 972671917}
+  - component: {fileID: 972671920}
   m_Layer: 5
   m_Name: Hydrogen peroxide
   m_TagString: Untagged
@@ -8324,19 +8505,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 972671918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &972671918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8375,6 +8544,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972671915}
   m_CullTransparentMesh: 1
+--- !u!114 &972671920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972671915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1009152824
 GameObject:
   m_ObjectHideFlags: 0
@@ -13719,6 +13917,7 @@ GameObject:
   - component: {fileID: 1381636776}
   - component: {fileID: 1381636775}
   - component: {fileID: 1381636774}
+  - component: {fileID: 1381636777}
   m_Layer: 5
   m_Name: Dish soap
   m_TagString: Untagged
@@ -13789,19 +13988,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1381636775}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 239652544}
-        m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
-        m_MethodName: IngredientSelected
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 11
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1381636775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13840,6 +14027,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381636772}
   m_CullTransparentMesh: 1
+--- !u!114 &1381636777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381636772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 239652544}
+          m_TargetAssemblyTypeName: IngredientsMenu, Assembly-CSharp
+          m_MethodName: IngredientSelected
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 11
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1414163251
 GameObject:
   m_ObjectHideFlags: 0
