@@ -65,6 +65,7 @@ public class FormulaHandler : MonoBehaviour {
         }
         // Checks if any of the formulas has been completed, and starts the reaction if it has.
         if (activeFormula[0] && currentFormula.Count == 2) {
+            reactionStarted = true;
             StartCoroutine(reactionHandler.CokeReaction());
             FormulaMenu.discoveredFormulas[0] = true;
 
