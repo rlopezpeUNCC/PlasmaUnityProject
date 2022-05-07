@@ -48,6 +48,7 @@ public class ReactionHandler : MonoBehaviour {
     }
     // The coke + mentos reaction.
     public IEnumerator CokeReaction() {
+        print("Coke + mentos reaction started");
         // Closes the ingredients menu if it is open.
         if (menuController.state == 2) {
             menuController.ToggleIngredientMenu();
@@ -75,6 +76,7 @@ public class ReactionHandler : MonoBehaviour {
     }
     // The elephant toothpaste reaction.
     public IEnumerator ElephantToothpasteReaction() {
+        print("Elephant toothpaste reaction started");
         // Closes the ingredients menu if it is open.
         if (menuController.state == 2) {
             menuController.ToggleIngredientMenu();
@@ -85,7 +87,7 @@ public class ReactionHandler : MonoBehaviour {
         StartCoroutine(UpdateBackground());
         // play eruption sfx
         elephantToothpaste.Play();
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(8);
         formulaHandler.ClearFormula(true);
         formulaHandler.reactionStarted = false;
         // Re-opens the ingredients menu if it was open when the reaction started. 
@@ -120,15 +122,14 @@ public class ReactionHandler : MonoBehaviour {
         formulaHandler.reactionStarted = false;
         formulaHandler.ClearFormula(true);
         updateMaterial = false;
-        yield return new WaitForSeconds(8);
-        // Stops updating the background color
-        updateColor = false;
-
         // Re-opens the ingredients menu if it was open when the reaction started.
         if (menuOpened) {
             menuController.ToggleIngredientMenu();      
             menuOpened = false;
         } 
+        yield return new WaitForSeconds(8);
+        // Stops updating the background color
+        updateColor = false;        
     }
     // Shakes the camera for a given durration and intensity.
     public void ShakeCamera(float intensity, float time) {

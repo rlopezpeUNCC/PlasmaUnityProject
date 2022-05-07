@@ -45,9 +45,12 @@ public class FormulaHandler : MonoBehaviour {
         if (!overide && reactionStarted)
             return;
 
-        currentFormula = new List<int>();
+        currentFormula.Clear();
         materialMesh.enabled = false;
         FormulaMenu.ClearCurrentFormula();
+        for (int i = 0; i < possibleFormulas; i++) {
+            activeFormula[i] = true;
+        }
     }
     // Checks if a reaction has been completed.
     void CheckFormula(int ingredient) {
@@ -63,10 +66,17 @@ public class FormulaHandler : MonoBehaviour {
         // Checks if any of the formulas has been completed, and starts the reaction if it has.
         if (activeFormula[0] && currentFormula.Count == 2) {
             StartCoroutine(reactionHandler.CokeReaction());
+            FormulaMenu.discoveredFormulas[0] = true;
+
         } else if (activeFormula[1] && currentFormula.Count == 5) {
+            reactionStarted = true;
             StartCoroutine(reactionHandler.ElephantToothpasteReaction());
+            FormulaMenu.discoveredFormulas[1] = true;
+            reactionStarted = true;
         } else if (activeFormula[2] && currentFormula.Count == 6) {
+            reactionStarted = true;
             StartCoroutine(reactionHandler.BriggsReaction());
+            FormulaMenu.discoveredFormulas[2] = true;
         }
     } 
     // Updates the flask liquid color to reflect the knewly added ingredient.  
@@ -124,7 +134,7 @@ public class FormulaHandler : MonoBehaviour {
         }
     }
     // Loops through the given formula (index) and returns if a value was found.
-    bool FindInCurrentFormula(int value, int index) {
+    public bool FindInCurrentFormula(int value, int index) {
         for (int i = 0; i < 6; i++) {
             if (formulas[index, i] != -1) {
                 if (formulas[index, i] == value)
@@ -132,5 +142,9 @@ public class FormulaHandler : MonoBehaviour {
             }
         }
         return false;
+    }
+
+    public int GetNumberOfFormulas() {
+        return possibleFormulas;
     }
 }

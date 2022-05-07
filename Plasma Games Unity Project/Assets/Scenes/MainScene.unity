@@ -8181,10 +8181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078124881187592428508dd0edda9316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cokeMentosText: {fileID: 549919854}
-  elephantText: {fileID: 2070362728}
-  briggsText: {fileID: 434350878}
+  formulaTexts:
+  - {fileID: 549919854}
+  - {fileID: 2070362728}
+  - {fileID: 434350878}
   currentFormulaText: {fileID: 2000796731}
+  discoveredFormulas: 
 --- !u!1 &902597274
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,7 +15453,7 @@ MonoBehaviour:
   cokeMentos:
   - {fileID: 2019788309}
   - {fileID: 1208936365}
-  elephantToothpaste: {fileID: 0}
+  elephantToothpaste: {fileID: 511331915}
   camCinemachine: {fileID: 905215204}
   material: {fileID: 2100000, guid: 8c8d5f7a2bc3c4622a9aa9d96a6df9f1, type: 2}
 --- !u!1 &1987461006
