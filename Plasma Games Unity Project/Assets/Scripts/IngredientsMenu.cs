@@ -13,8 +13,12 @@ public class IngredientsMenu : MonoBehaviour {
     Text title;
     [SerializeField]
     GameObject mouseItem;
+    AudioManager audioManager;
     string[] titles = {"Chemicals", "Food", "Home", "Formulas"}; // The titles for each sub menu.
     int state = 0;
+    void Start() {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     // Naviagtes between the sub menus in the ingredients menu.
     public void ToggleMenu(int menu) {
@@ -30,9 +34,11 @@ public class IngredientsMenu : MonoBehaviour {
         state = menu;
         // Plays the animation for a menu opening.
         animator.SetInteger("State", state);
+        audioManager.Play("ButtonClicked2");
     }
     // Updates the selected ingredient.
     public void IngredientSelected(int ingredient) {
+        audioManager.Play("MushroomHit");
         mouseItem.GetComponent<MouseIngredient>().IngredientSelected(ingredient);
     }
 }

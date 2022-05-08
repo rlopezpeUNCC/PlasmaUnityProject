@@ -1,0 +1,443 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3372197346106344989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3372197346106344979}
+  - component: {fileID: 3372197346106344978}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3372197346106344979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372197346106344989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08018715, y: 0.52085716, z: -0.098126456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3372197346106344978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3372197346106344989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1542b842096ec04c98dd65c68cc93e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerSFX: {fileID: 7390262452624975739, guid: aa78644f266f26c4d9f68eacc1e47674,
+    type: 2}
+  mixerMusic: {fileID: -4616195505685151716, guid: aa78644f266f26c4d9f68eacc1e47674,
+    type: 2}
+  sounds:
+  - name: ButtonClicked
+    clip: {fileID: 8300000, guid: 384da598ee7712f4590b1b9861a2b5c9, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ButtonClicked2
+    clip: {fileID: 8300000, guid: c5d3882c56f01754a900d0316f7c1d14, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Evaded
+    clip: {fileID: 8300000, guid: 672ce40b7bba2854dab86aae08ed0477, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: SkillSelected
+    clip: {fileID: 8300000, guid: 4ffab57f9a7b4304c86cb00ba9fa0954, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ChestOpened
+    clip: {fileID: 8300000, guid: 8ecc92cee7373674a94be56820a9567b, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: TreantHit
+    clip: {fileID: 8300000, guid: cdbebada758a9a34a89d031b03c50fd8, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: AutoFire
+    clip: {fileID: 8300000, guid: a734e932dcd003443a2c5a8c124243da, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ChargedFired
+    clip: {fileID: 8300000, guid: 6ee1b97c1dd20a140a53acfab2541385, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ItemEquiped1
+    clip: {fileID: 8300000, guid: 5c211a7d397eee74e9675551e614fdfd, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ItemEquiped2
+    clip: {fileID: 8300000, guid: 9ecbd4d99a4675a4ab7ea5703b50f94a, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: LevelUp
+    clip: {fileID: 8300000, guid: bed0b4d3ac8656445bfc6d63c5d5eb90, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: SliderOpened
+    clip: {fileID: 8300000, guid: 4764e82c23c6a814499de366add22f40, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: DwellerAttack
+    clip: {fileID: 8300000, guid: c35ac11cbfd3035438d032f354e86c37, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: DaggerFire
+    clip: {fileID: 8300000, guid: 9f501f7982f9f4348922ddb0373990f4, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: SliderClosed
+    clip: {fileID: 8300000, guid: b2bdf98efdf74b44d8fdfe4a0b50c0d5, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: PlayerHit1
+    clip: {fileID: 8300000, guid: 577cdc42bd601db42a7981b091d72c69, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: PlayerHit2
+    clip: {fileID: 8300000, guid: 40b3c214e99d3ec469b48a0fd4e0ea24, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: AccountLevel
+    clip: {fileID: 8300000, guid: f91c09dc461b84f479a7e28c92cb0571, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: MonumentFailed
+    clip: {fileID: 8300000, guid: 098819966fb6a6e4eb52436117263b1a, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: XPConsumed
+    clip: {fileID: 8300000, guid: 123f2703d122d9942a73e058fd6a00a2, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: InhibitorFire
+    clip: {fileID: 8300000, guid: 3c963fb0e16c9984d826b9b6d426251b, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ExplosiveFire
+    clip: {fileID: 8300000, guid: 9404f5f3d67a5df4e850ff9f11513960, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: BossSpawned
+    clip: {fileID: 8300000, guid: 05f63adae5174044d992ca08f99cd666, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: CountDown
+    clip: {fileID: 8300000, guid: f191df0d2ec33c34eb13a692ced50d5d, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 1
+    muteWhenPaused: 1
+  - name: RainOfArrows
+    clip: {fileID: 8300000, guid: 1a63a86a1a219124c91bb735d6584eb3, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 1
+    muteWhenPaused: 1
+  - name: BanditFire
+    clip: {fileID: 8300000, guid: f3774c683b640b24590ccd8ba066fdb5, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: CoinCollected
+    clip: {fileID: 8300000, guid: 0a992cf386fb0ad4aaab5fe099b80877, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ShopBought
+    clip: {fileID: 8300000, guid: ff8c2b5eddcce55419664c425765757d, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ShopFailed
+    clip: {fileID: 8300000, guid: ee4c339e922750c4db2e5fde3c19d154, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: DrunkArrow
+    clip: {fileID: 8300000, guid: f3c931cc0c9ff1f4593ac46d2ac57dd0, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: BanditHit
+    clip: {fileID: 8300000, guid: f568f441fd0669f49b787dba1015ae4c, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: MoleHit
+    clip: {fileID: 8300000, guid: c47e864b79d760b4c863131e94d54d95, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: SkellyHit
+    clip: {fileID: 8300000, guid: 51dc21b21a4055340a7d8ba0bdee4a45, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: CorpseHit
+    clip: {fileID: 8300000, guid: 5d5c9c4fd8fc6c74e8ab40c4fa234e84, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: MushroomHit
+    clip: {fileID: 8300000, guid: b893daf573f93dc49bc35bda9ae1cd3a, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: RepulsorHit
+    clip: {fileID: 8300000, guid: c2c56361b3529ba4bba9b93b7221ec06, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ShadowHit
+    clip: {fileID: 8300000, guid: dee13ea08fb005840afff08b6e136afd, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 589ce77b32a1a3a43847c40e3212bce2, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: InhibitorHit
+    clip: {fileID: 8300000, guid: 3c976b5072d66fd42ac3c42b08a47f75, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: InhibitorHit
+    clip: {fileID: 8300000, guid: 3c976b5072d66fd42ac3c42b08a47f75, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: HPConsumed
+    clip: {fileID: 8300000, guid: cfbda7a24fb524a469a21154effbea42, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Lost
+    clip: {fileID: 8300000, guid: 41067bda32e100642a42b6063e9b7338, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: ExpandedQuiver
+    clip: {fileID: 8300000, guid: 410798bcc622b114280a51ee7ca7565c, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: MonumentCompleted
+    clip: {fileID: 8300000, guid: 0ecaf3eba95604647ab67e1b48ebfc9d, type: 3}
+    volume: 0.2
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  music:
+  - name: Dragon Castle
+    clip: {fileID: 8300000, guid: bc330dc198fb500468c4efc49c4ca6df, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Farm
+    clip: {fileID: 8300000, guid: 276e832a7399d434d87aac2d78e73114, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Planning
+    clip: {fileID: 8300000, guid: 30150c17f4acc954a95eb0f6f240e098, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Game menu
+    clip: {fileID: 8300000, guid: 89930f6ce4b030449b1bc0d56d7f9c1b, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Moonlit-Secrets
+    clip: {fileID: 8300000, guid: 704db4afaba973840be848887fae4312, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Netherplace
+    clip: {fileID: 8300000, guid: cc55aa0fc076577428735c44ccf4b3a4, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Our Mointain
+    clip: {fileID: 8300000, guid: e3e7b32ada812da47838565497fadc08, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Realm of Fantasy
+    clip: {fileID: 8300000, guid: 296a528eec6da0f4684b349ca64dd356, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: RPG Theme
+    clip: {fileID: 8300000, guid: 94d5b9fdc2fe71541a893d01eb0872d4, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: The Awkard Prince
+    clip: {fileID: 8300000, guid: d9a39c125af94534e9c565c86719b030, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: The Village
+    clip: {fileID: 8300000, guid: e5e65e23fb58d2f46b0b3cb42acf2756, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0
+  - name: Trouble in the kingdom
+    clip: {fileID: 8300000, guid: 0b5508e7f96b70849bf79b679b1a9412, type: 3}
+    volume: 0.1
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+    muteWhenPaused: 0

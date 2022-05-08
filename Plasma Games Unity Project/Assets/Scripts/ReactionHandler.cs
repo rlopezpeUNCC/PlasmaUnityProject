@@ -24,12 +24,14 @@ public class ReactionHandler : MonoBehaviour {
     float duration; // The durration of the reactions.
     Color newColor;
     MenuController menuController;    
+    AudioManager audioManager;
     void Start() {
         mainCam = FindObjectOfType<Camera>();
         formulaHandler = FindObjectOfType<FormulaHandler>();
         shake = camCinemachine.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         startColor = mainCam.backgroundColor;
         menuController = FindObjectOfType<MenuController>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     void Update() {
         // Shake the camera.
@@ -54,6 +56,7 @@ public class ReactionHandler : MonoBehaviour {
             menuController.ToggleIngredientMenu();
             menuOpened = true;
         }
+        audioManager.Play("DwellerAttack");
         ShakeCamera(2f, 2);
         duration = 6;
         StartCoroutine(UpdateBackground());
@@ -82,6 +85,7 @@ public class ReactionHandler : MonoBehaviour {
             menuController.ToggleIngredientMenu();
             menuOpened = true;
         }
+        audioManager.Play("DwellerAttack");
         ShakeCamera(2f, 6);
         duration = 6;
         StartCoroutine(UpdateBackground());
@@ -102,6 +106,7 @@ public class ReactionHandler : MonoBehaviour {
             menuController.ToggleIngredientMenu();
             menuOpened = true;
         }
+        audioManager.Play("Countdown");
         print("Starting briggs reaction");
         // Starts updating the background and flask colors. Switches between red and blue every 3 seconds.
         updateColor = true;
@@ -118,6 +123,7 @@ public class ReactionHandler : MonoBehaviour {
         yield return new WaitForSeconds(3);
         newColor = Color.red;    
         yield return new WaitForSeconds(3);
+        audioManager.Stop("Countdown");
         newColor = startColor;
         formulaHandler.reactionStarted = false;
         formulaHandler.ClearFormula(true);

@@ -20,12 +20,14 @@ public class FormulaHandler : MonoBehaviour {
     public bool reactionStarted = false; // If a reaction has started. Used to prevent new chemicals from being added.
     ReactionHandler reactionHandler; 
     FormulaMenu FormulaMenu;
+    AudioManager audioManager;
     void Start() {
                                                 //   Coke + menutos         Elphant toothpaste      Briggs clock
         formulas = new int[possibleFormulas, 6] {{6, 5, -1, -1, -1, -1}, {0, 7, 9, 11, 10, -1}, {1, 8, 2, 3, 4, 0}};
         activeFormula = new bool[possibleFormulas] {true, true, true};
         reactionHandler = FindObjectOfType<ReactionHandler>();
         FormulaMenu = FindObjectOfType<FormulaMenu>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     // Adds a knew ingredient to the list.
     public void AddIngredient(int ingredient) {
@@ -51,6 +53,8 @@ public class FormulaHandler : MonoBehaviour {
         for (int i = 0; i < possibleFormulas; i++) {
             activeFormula[i] = true;
         }
+        if (!overide)
+            audioManager.Play("InhibitorHit");
     }
     // Checks if a reaction has been completed.
     void CheckFormula(int ingredient) {
@@ -68,16 +72,20 @@ public class FormulaHandler : MonoBehaviour {
             reactionStarted = true;
             StartCoroutine(reactionHandler.CokeReaction());
             FormulaMenu.discoveredFormulas[0] = true;
-
+            audioManager.Play("HPConsumed");
         } else if (activeFormula[1] && currentFormula.Count == 5) {
             reactionStarted = true;
             StartCoroutine(reactionHandler.ElephantToothpasteReaction());
             FormulaMenu.discoveredFormulas[1] = true;
             reactionStarted = true;
+            audioManager.Play("HPConsumed");
         } else if (activeFormula[2] && currentFormula.Count == 6) {
             reactionStarted = true;
             StartCoroutine(reactionHandler.BriggsReaction());
             FormulaMenu.discoveredFormulas[2] = true;
+            audioManager.Play("HPConsumed");
+        } else if (!activeFormula[0] && !activeFormula[1] && !activeFormula[2]) {
+            audioManager.Play("Lost");
         }
     } 
     // Updates the flask liquid color to reflect the knewly added ingredient.  

@@ -1,8 +1,7 @@
 /*
     Faciliates the drag and droping of new ingredients.
 */
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MouseIngredient : MonoBehaviour {
@@ -13,14 +12,17 @@ public class MouseIngredient : MonoBehaviour {
     SpriteRenderer sprite; // The sprite component of the ingredient.
     int ingredient = -1; // The ID of the ingredent.
     FormulaHandler formulaHandler;
+    AudioManager audioManager;
     void Start() {
         rb = gameObject.GetComponent<Rigidbody2D>();
         sprite = gameObject.GetComponent<SpriteRenderer>();
         formulaHandler = FindObjectOfType<FormulaHandler>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     void Update() {
         // Drops the ingredient if the mouse is clicked.
         if (!dropped && Input.GetMouseButtonUp(0) && ingredient != -1 && transform.position.x < 3.2f) {
+            audioManager.Play("ItemEquiped1");
             dropped = true;
         }
     }
@@ -41,21 +43,25 @@ public class MouseIngredient : MonoBehaviour {
         // Returns if the ingredient has not been dropped.
         if (!dropped)
             return;
-
-        // if (other.name.Contains("Scene Bounds")) 
-        //     return;      
+        if (other.name.Contains("Main Menu Flask")) {
+            SceneManager.LoadScene("MainScene");
+            return;
+        }
         // Adds the ingredient to the list if it collides with the flask.
-        if (other.name.Contains("Flask"))
+        if (other.name.Contains("Flask")) {
             formulaHandler.AddIngredient(ingredient);
-
+            audioManager.Play("XPConsumed");
+        }
         dropped = false; 
         sprite.enabled = false;
         ingredient = -1;
     }
     // Updates the selected ingredient.
     public void IngredientSelected(int ingredient) {
-        if (dropped)
+        if (dropped) {
+            audioManager.Play("ShopFailed");
             return;
+        }
         // Removes the opacity changes and enables the sprite.
         sprite.color = Color.white;
         sprite.enabled = true;
