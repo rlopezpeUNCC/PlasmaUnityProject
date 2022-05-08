@@ -10,14 +10,17 @@ using UnityEngine;
 
 public class FormulaHandler : MonoBehaviour {
     [SerializeField]
-    MeshRenderer materialMesh; // The mesh of the flask liquid
+    MeshRenderer materialMesh; // The mesh of the flask liquid.
     [SerializeField]
-    Material material; // The materia of the liquid in the flask
-    List<int> currentFormula = new List<int>(); // The current inputed formula
-    const int possibleFormulas = 3; // The amount of possible reactions
-    int[,] formulas; // An array containing all of the possible formulas. An integer is assigned to each of the ingredients
+    Material material; // The materia of the liquid in the flask.
+    [SerializeField]
+    GameObject winMenu;
+    List<int> currentFormula = new List<int>(); // The current inputed formula.
+    const int possibleFormulas = 3; // The amount of possible reactions.
+    int[,] formulas; // An array containing all of the possible formulas. An integer is assigned to each of the ingredients.
     bool[] activeFormula; // Keeps track of which formulas are possible
     public bool reactionStarted = false; // If a reaction has started. Used to prevent new chemicals from being added.
+    bool won = false; // If all formulas have been discovered.
     ReactionHandler reactionHandler; 
     FormulaMenu FormulaMenu;
     AudioManager audioManager;
@@ -34,7 +37,7 @@ public class FormulaHandler : MonoBehaviour {
         // Prevents the addition of new ingredients if the reaction has already started.
         if (reactionStarted) 
             return;
-
+        // Adds the ingredient to the list and checks if a reation has been completed.
         currentFormula.Add(ingredient);
         FormulaMenu.UpdateCurrentFormula(ingredient);
         print("Ingredient Added: " + ingredient);
@@ -46,10 +49,10 @@ public class FormulaHandler : MonoBehaviour {
         // Returns if the reaction has already started, can be overriden by some reactions that can be cleared before 100% completion.
         if (!overide && reactionStarted)
             return;
-
+        // Resets everything to be used for a new formula.
         currentFormula.Clear();
         materialMesh.enabled = false;
-        FormulaMenu.ClearCurrentFormula();
+        FormulaMenu.ClearCurrentFormula();        
         for (int i = 0; i < possibleFormulas; i++) {
             activeFormula[i] = true;
         }
@@ -68,24 +71,26 @@ public class FormulaHandler : MonoBehaviour {
             }
         }
         // Checks if any of the formulas has been completed, and starts the reaction if it has.
-        if (activeFormula[0] && currentFormula.Count == 2) {
+        if (activeFormula[0] && currentFormula.Count == 2) { // Coke and mentos reaction
             reactionStarted = true;
             StartCoroutine(reactionHandler.CokeReaction());
             FormulaMenu.discoveredFormulas[0] = true;
             audioManager.Play("HPConsumed");
-        } else if (activeFormula[1] && currentFormula.Count == 5) {
+        } else if (activeFormula[1] && currentFormula.Count == 5) { // Elephant toothpaste reaction
             reactionStarted = true;
             StartCoroutine(reactionHandler.ElephantToothpasteReaction());
             FormulaMenu.discoveredFormulas[1] = true;
             reactionStarted = true;
             audioManager.Play("HPConsumed");
-        } else if (activeFormula[2] && currentFormula.Count == 6) {
+        } else if (activeFormula[2] && currentFormula.Count == 6) { // Briggs reaction
             reactionStarted = true;
             StartCoroutine(reactionHandler.BriggsReaction());
             FormulaMenu.discoveredFormulas[2] = true;
             audioManager.Play("HPConsumed");
-        } else if (!activeFormula[0] && !activeFormula[1] && !activeFormula[2]) {
+        } else if (!activeFormula[0] && !activeFormula[1] && !activeFormula[2]) { // Dud reaction
             audioManager.Play("Lost");
+            print("Reaction is unknown (failure)");
+            FormulaMenu.UnknownFormula();
         }
     } 
     // Updates the flask liquid color to reflect the knewly added ingredient.  
@@ -152,8 +157,18 @@ public class FormulaHandler : MonoBehaviour {
         }
         return false;
     }
-
+    // Returns the number of possible formulas.
     public int GetNumberOfFormulas() {
         return possibleFormulas;
+    }
+    // Checks if all of the formulas have been discovered.
+    public void CheckWin() {
+        if (won)
+            return;
+
+        if (reactionHandler.discoveredFormulas[0] && reactionHandler.discoveredFormulas[1] && reactionHandler.discoveredFormulas[2]) {
+            winMenu.SetActive(true);
+            print("All formulas Discovered!");
+        }
     }
 }

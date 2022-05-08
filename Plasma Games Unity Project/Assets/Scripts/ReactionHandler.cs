@@ -21,6 +21,7 @@ public class ReactionHandler : MonoBehaviour {
     float shakeTimer, startingIntensity, shakeTimerTotal; // These are used for controlling the shake durration and intensity.
     Color startColor; // The origional background starting color.
     bool updateColor = false, menuOpened = false, updateMaterial = false;
+    public bool[] discoveredFormulas = new bool[3] {false, false, false};
     float duration; // The durration of the reactions.
     Color newColor;
     MenuController menuController;    
@@ -56,11 +57,11 @@ public class ReactionHandler : MonoBehaviour {
             menuController.ToggleIngredientMenu();
             menuOpened = true;
         }
+        discoveredFormulas[0] = true; 
         audioManager.Play("DwellerAttack");
         ShakeCamera(2f, 2);
         duration = 6;
         StartCoroutine(UpdateBackground());
-        // play eruption sfx -------------------------------------- remove once implemented
         // Plays the first particle effect.
         cokeMentos[0].Play();
         yield return new WaitForSeconds(2);
@@ -75,7 +76,8 @@ public class ReactionHandler : MonoBehaviour {
         if (menuOpened) {
             menuController.ToggleIngredientMenu();     
             menuOpened = false;
-        }           
+        } 
+        formulaHandler.CheckWin();           
     }
     // The elephant toothpaste reaction.
     public IEnumerator ElephantToothpasteReaction() {
@@ -85,6 +87,7 @@ public class ReactionHandler : MonoBehaviour {
             menuController.ToggleIngredientMenu();
             menuOpened = true;
         }
+        discoveredFormulas[1] = true; 
         audioManager.Play("DwellerAttack");
         ShakeCamera(2f, 6);
         duration = 6;
@@ -98,7 +101,8 @@ public class ReactionHandler : MonoBehaviour {
         if (menuOpened) {
             menuController.ToggleIngredientMenu();      
             menuOpened = false;
-        }        
+        }
+        formulaHandler.CheckWin();         
     }
     public IEnumerator BriggsReaction() {
         // Closes the ingredients menu if it is open.
@@ -106,7 +110,8 @@ public class ReactionHandler : MonoBehaviour {
             menuController.ToggleIngredientMenu();
             menuOpened = true;
         }
-        audioManager.Play("Countdown");
+        discoveredFormulas[2] = true; 
+        audioManager.Play("CountDown");
         print("Starting briggs reaction");
         // Starts updating the background and flask colors. Switches between red and blue every 3 seconds.
         updateColor = true;
@@ -123,7 +128,7 @@ public class ReactionHandler : MonoBehaviour {
         yield return new WaitForSeconds(3);
         newColor = Color.red;    
         yield return new WaitForSeconds(3);
-        audioManager.Stop("Countdown");
+        audioManager.Stop("CountDown");
         newColor = startColor;
         formulaHandler.reactionStarted = false;
         formulaHandler.ClearFormula(true);
@@ -132,7 +137,8 @@ public class ReactionHandler : MonoBehaviour {
         if (menuOpened) {
             menuController.ToggleIngredientMenu();      
             menuOpened = false;
-        } 
+        }
+        formulaHandler.CheckWin(); 
         yield return new WaitForSeconds(8);
         // Stops updating the background color
         updateColor = false;        
@@ -157,4 +163,6 @@ public class ReactionHandler : MonoBehaviour {
         yield return new WaitForSeconds(3);
         updateColor = false;
     }
+
+    
 }
